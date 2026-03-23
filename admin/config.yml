@@ -1,0 +1,67 @@
+# Thay YOUR_USER và YOUR_REPO bằng GitHub của bạn (vd: nguyen/minh-duc-main)
+backend:
+  name: github
+  repo: YOUR_GITHUB_USER/YOUR_REPO_NAME
+  branch: main
+
+# Đăng nhập GitHub OAuth: xem admin/HUONG-DAN.md
+local_backend: false
+
+media_folder: img/uploads
+public_folder: /img/uploads
+
+collections:
+  - name: tin_tuc
+    label: Tin tức
+    label_singular: Bài viết
+    identifier_field: slug
+    folder: tin-tuc
+    create: true
+    slug: "{{slug}}"
+    path: "{{slug}}/index"
+    extension: md
+    format: frontmatter
+    fields:
+      - label: Slug URL (khong dau, vi du bai-viet-moi)
+        name: slug
+        widget: string
+      - { label: Tiêu đề, name: title, widget: string }
+      - { label: Mô tả SEO, name: description, widget: text }
+      - {
+          label: Từ khóa,
+          name: keywords,
+          widget: string,
+          required: false,
+        }
+      - {
+          label: Ảnh OG / ảnh đại diện (đường dẫn),
+          name: og_image,
+          widget: string,
+          default: "/img/thu-mua-cap-dong-duc-minh.webp",
+        }
+      - {
+          label: Alt ảnh đại diện,
+          name: image_alt,
+          widget: string,
+          required: false,
+        }
+      - { label: Ngày đăng, name: date, widget: datetime }
+      - {
+          label: Ngày cập nhật,
+          name: updated,
+          widget: datetime,
+          required: false,
+        }
+      - {
+          label: Tên ngắn (breadcrumb),
+          name: breadcrumb_title,
+          widget: string,
+          required: false,
+        }
+      - {
+          label: Hiện ảnh đại diện,
+          name: show_hero,
+          widget: boolean,
+          default: true,
+        }
+      - { label: Nội dung, name: body, widget: markdown }
