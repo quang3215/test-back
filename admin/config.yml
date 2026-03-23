@@ -1,7 +1,7 @@
 # Thay YOUR_USER và YOUR_REPO bằng GitHub của bạn (vd: nguyen/minh-duc-main)
 backend:
-  name: github
-  repo: YOUR_GITHUB_USER/YOUR_REPO_NAME
+  name: git-gateway
+  repo: quang3215/test-back
   branch: main
 
 # Đăng nhập GitHub OAuth: xem admin/HUONG-DAN.md
@@ -27,12 +27,7 @@ collections:
         widget: string
       - { label: Tiêu đề, name: title, widget: string }
       - { label: Mô tả SEO, name: description, widget: text }
-      - {
-          label: Từ khóa,
-          name: keywords,
-          widget: string,
-          required: false,
-        }
+      - { label: Từ khóa, name: keywords, widget: string, required: false }
       - {
           label: Ảnh OG / ảnh đại diện (đường dẫn),
           name: og_image,
